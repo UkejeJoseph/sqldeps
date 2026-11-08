@@ -1,0 +1,90 @@
+site_name: SQLDeps
+site_description: SQL Dependency Extractor using Large Language Models
+site_author: Cainã Max Couto da Silva
+repo_url: https://github.com/glue-lab/sqldeps
+repo_name: glue-lab/sqldeps
+
+extra_css:
+  - stylesheets/custom.css
+
+theme:
+  name: material
+  favicon: assets/images/sqldeps_logo.png
+  palette:
+    primary: custom
+    accent: custom
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+
+  icon:
+    repo: fontawesome/brands/github
+  icons:
+    - material/
+    - fontawesome/brands/
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            show_root_heading: true
+            show_root_full_name: true
+            show_source: true
+            show_if_no_docstring: false
+            docstring_style: google
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - admonition
+  - pymdownx.details
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - footnotes
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Installation: getting-started/installation.md
+    - Quick Start: getting-started/quick-start.md
+  - User Guide:
+    - API Usage: user-guide/api-usage.md
+    - CLI Usage: user-guide/cli-usage.md
+    - Web Application: user-guide/web-app.md
+    - Database Integration: user-guide/database-integration.md
+    - Interactive Graph Visualization: user-guide/visualization.md
+  - API Reference:
+    - Core features:
+      - Models: api-reference/models.md
+      - LLM Parsers: api-reference/llm-parsers.md
+      - Database: api-reference/database.md
+      - Visualization: api-reference/visualization.md
+    - Advanced features:
+      - Config: api-reference/config.md
+      - Utils: api-reference/utils.md
+      - Cache: api-reference/cache.md
+      - Rate Limiter: api-reference/rate-limiter.md
+      - Parallelization: api-reference/parallel.md
+    # - Interfaces: # No need to document these interfaces
+    #   - CLI: api-reference/cli.md
+    #   - Web Application: api-reference/app.md
+
+  # - Examples: examples.md
+  - Development:
+    - Contributing: contributing.md
+    - ChangeLog: changelog.md
+  - Team:
+    - Authors: authors.md
+    # - Contributors: team/contributors.md # ToDo: add script to show contributors
